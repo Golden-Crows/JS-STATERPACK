@@ -1,0 +1,5 @@
+console.log("Ndelek")
+console.info("kore wa info desu")
+console.debug("kore wa debug desu")
+console.warn("kore wa peringatan desu")
+console.error("kore wa error desu")

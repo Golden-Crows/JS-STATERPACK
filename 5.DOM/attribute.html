@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attr</title>
+</head>
+<body>
+    <img id="alfa-gmbr" name="logo-trakteer" src="https://trakteer.id/storage/images/content/6l8b75dvqxp5qkv9/ct-7MjIjDJcva5ENdngxVvmFqShrSjbQCJH1643598394.jpg" alt="alfa">
+    <img id="alfa-gmbr2">
+    <img id="alfa-gmbr3">
+    <script>
+        {
+            const logo = document.getElementById('alfa-gmbr')
+            const src = logo.getAttributeNode("src")
+
+            console.info(src.name)
+            console.info(src.value)
+        }
+
+        {
+            //langsung mendapatkan value nya 
+            const logo = document.getElementById('alfa-gmbr')
+            const src = logo.getAttributeNode("src")
+            console.info(src)
+        }
+
+        {
+            //membuat attribute
+            const logo = document.getElementById('alfa-gmbr2')
+
+            const src = document.createAttribute('src')
+            src.value = 'https://trakteer.id/storage/images/content/6l8b75dvqxp5qkv9/ct-K4mWd6hDIkSyeQ8cWPeZ2Mgjqo5s0Gkz1587535770.jpg'
+
+            logo.setAttributeNode(src)
+        }
+
+        {
+            //cara lain membuat attribute
+            const logo = document.getElementById('alfa-gmbr3')
+            logo.setAttribute("src","https://pbs.twimg.com/profile_images/1487398178962178049/UFIWUYqM_400x400.jpg")
+        }
+    </script>
+</body>
+</html>

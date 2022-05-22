@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Await</title>
+</head>
+<body>
+    <script>
+
+        //promise json
+        function getProduct(){
+            const request = new Request("api/product.json",{
+                method:"GET"
+            })
+
+            const response = fetch(request)
+
+            return response.then((response)=>response.json())
+        }
+
+        getProduct().then((product)=>console.info(product))
+
+        //promise string
+        function getProductPromise(){
+
+            return new Promise(function(resolve,reject){
+                getProduct()
+                    .then((product)=>resolve(product.nama))
+                    .catch((error)=>reject(error))
+            })
+        }
+
+        getProductPromise().then((productName)=>console.info(productName)) //ribet pakai promise
+
+        
+        //versi async
+        async function getProductAsync(){
+            try{
+                const product = await getProduct()
+
+                return product.nama
+            }
+            catch(e){
+                return "Product tidak ditemukan"
+            }
+        }
+
+        getProductAsync().then((productName)=>console.info(productName))//lebih simpel
+    </script>
+</body>
+</html>

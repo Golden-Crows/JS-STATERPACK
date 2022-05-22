@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Selector</title>
+</head>
+<body>
+    <p>This is text</p>
+
+    <ul id="ul">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <div class="oke" id="oke"></div>
+
+    <div class="nori"></div>
+    <div class="naoki"></div>
+    <div class="kigi"></div>
+
+    <script>
+
+        //seleksi semua data
+        const element = document.querySelectorAll("*")
+        console.info(element)
+
+        const li = document.querySelectorAll("li")
+        console.info(li)
+        
+        //selector class dan selector id
+        const classOke  = document.querySelector(".oke") //class
+        const idOke     = document.querySelector("#oke") //id
+
+        const ul = document.querySelector("#ul")
+        console.info(ul)
+        ul.style.backgroundColor = "red"
+
+        //selector attribute
+        const classDiv = document.querySelectorAll("[class]") //mengambil element yang memiliki attribute class
+        console.info(classDiv)
+
+        //selector attribute subjective
+        const classDiv2 = document.querySelectorAll("div[class^=nori]")
+        console.info(classDiv2)
+    </script>
+</body>
+</html>

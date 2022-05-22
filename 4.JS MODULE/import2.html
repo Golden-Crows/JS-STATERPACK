@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module">
+        import author , {content,title} from "./script/default_and_named.js"
+        console.log(author)
+        console.log(content)
+        console.log(title)
+
+        //module object
+        import * as Alfa from "./script/module_object.js"
+        console.log(Alfa.firstName)
+        console.log(Alfa.middleName)
+        console.log(Alfa.lastName)
+        
+        //mengisi class class
+        const person = new Alfa.Orang()
+
+    </script>
+    <h1>Belajar js</h1>
+    <h1>Belajar js</h1>
+</body>
+</html>

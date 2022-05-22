@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handler</title>
+</head>
+<body>
+    <input type="button"  id="btn-click" value="lokal">
+    <input type="button"  id="btn-click-global" value="global">
+    <script>
+        {
+            //lokal
+            //event target
+            const btn = document.getElementById('btn-click')
+
+            //kalau menggunakan lokal event listener bisa di callback banyak
+            btn.addEventListener('click',function(){
+                btn.setAttribute('value','Sudah di click')
+            })
+
+            btn.addEventListener('click',function(){
+                console.log('tombol di click')
+            })
+        }
+
+        {
+            //global
+            const btn = document.getElementById('btn-click-global')
+            btn.onclick = function(){
+                btn.setAttribute('value','sudah di click')
+                console.log('tombol diclick') 
+                //jika global maka kita harus mendefinisikannnya di fungsi nya ini
+                //tidak bisa di callback banyak seperti lokal
+            }
+        }
+    </script>
+</body>
+</html>

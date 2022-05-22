@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic module loading</title>
+</head>
+<body>
+    <input type="text" id="name" placeholder="masukkan nama anda">
+    <button type="button" value="muncul" id="sayTombol">Gasspol</button>
+    <script type="module">
+        document.querySelector('#sayTombol').onclick = function(){
+            const name = document.getElementById('name').value
+            
+            import("./script/dynamic.js").then(function(module){
+                module.muncul(name)
+            })
+        }
+    </script>
+</body>
+</html>

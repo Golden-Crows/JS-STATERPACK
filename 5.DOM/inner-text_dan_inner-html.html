@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inner text & Inner Html</title>
+</head>
+<body>
+    <p id="content">
+        <script>
+            console.log('hello world')
+        </script>
+        <b>Alfa</b>Naoki<i>Kigi</i>
+    </p>
+
+    <div class="content"></div>
+
+    <script>
+        {
+            //inner text
+            const content = document.getElementById('content')
+            console.info(content.textContent)
+            console.info(content.innerText)
+        }
+
+        {
+            //inner html
+            const content = document.querySelector('.content')
+            content.innerHTML = '<h1>Judul</h1><p>Deskripsi</p>'
+        }
+    </script>
+</body>
+</html>

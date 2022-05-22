@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node List</title>
+</head>
+<body>
+    <ul id="menu-1">
+        <li id="Halo">Halo</li>
+        <li id="Hai">Hai</li>
+        <li id="Hehe">Hehe</li>
+    </ul>
+
+    <ul id="menu-2">
+        <li >Nori</li>
+        <li>Naoki</li>
+        <li>Kigi</li>
+    </ul>
+
+    <script>
+        {
+            //nodelist static
+            const list = document.querySelectorAll("li")
+            console.info(list)
+
+            const menu1 = document.getElementById("menu-1").childNodes
+            console.info(menu1)
+            
+            const menu2 = document.getElementById("menu-2").childNodes
+            console.info(menu2)
+        }
+
+        {
+            //nodelist live
+            const menu1 = document.getElementById("menu-1")
+            const list = menu1.childNodes
+
+            console.info(list)
+        }
+    </script>
+</body>
+</html>

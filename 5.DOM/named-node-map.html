@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Named Node Map</title>
+</head>
+<body>
+    <img id="alfa-gmbr" name="logo-trakteer" src="https://trakteer.id/storage/images/content/6l8b75dvqxp5qkv9/ct-7MjIjDJcva5ENdngxVvmFqShrSjbQCJH1643598394.jpg" alt="alfa">
+    <script>
+        const logo = document.getElementById('alfa-gmbr')
+        const attributes = logo.attributes
+
+        for (const attribut of attributes) {
+            console.log(`${attribut.name} : ${attribut.value}`)
+        }
+       
+    </script>
+</body>
+</html>

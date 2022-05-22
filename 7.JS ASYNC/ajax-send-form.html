@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <form name="form" >
+        <label for="username">
+            username:
+            <input type="text" id="username" placeholder="masukkan username" autofocus>
+        </label>
+        
+        <br/>
+
+        <label for="password">
+            password:
+            <input type="password" id="password" placeholder="masukkan password">
+        </label>
+
+        <br/>
+
+        <input type="button" value="login" id="login">
+    </form>
+
+    <h1 id="response"></h1>
+
+    <script>
+        function doLogin(){
+            const ajax = new XMLHttpRequest();
+
+            ajax.open("POST","https://hookb.in/E7OyGLE7g3sL9BEGP2Ee");
+            ajax.onload = function(){
+                const response = document.getElementById("response");
+                response.innerText = ajax.responseText;
+            }
+
+            ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+           
+            const form = new URLSearchParams();
+            form.append("username",document.getElementById("username").value);
+            form.append("password",document.getElementById("password").value);
+
+            ajax.send(form);
+
+        }
+
+        document.getElementById("login").onclick = doLogin;
+    </script>
+</body>
+</html>
